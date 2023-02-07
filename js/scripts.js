@@ -1,10 +1,21 @@
-// Used for one line 
+let pokemonList = [
+    { name: 'squirtle', height: 6, types: ['grass', 'poison']}
+]
 
-alert('Hello world')
+let pokemon1 = {
+    name: 'Bulbasaur',
+    height: 7,
+    types: ['grass', 'poison']
+}
+ 
+let pokemon2 = {
+    name: 'Charmander',
+    height: 6,
+    types: ['fire']
+}
 
-let favouriteFood = 'Dark chocolate';
-document.write(favouriteFood);
-
-/* Used for 
-Multiple lines */
-
+let pokemon3 = {
+    name: 'Squirtle',
+    height: 5,
+    types: ['water']
+}
