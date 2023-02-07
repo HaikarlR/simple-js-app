@@ -1,7 +1,10 @@
+// This will display the pokemon data in the pokedex
 let pokemonList = [
     { name: 'squirtle', height: 6, types: ['grass', 'poison']}
 ]
 
+
+// Objects Representing each pokemon
 let pokemon1 = {
     name: 'Bulbasaur',
     height: 7,
