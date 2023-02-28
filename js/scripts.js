@@ -13,9 +13,34 @@ function add(pokemon){
     pokemonList.push(pokemon);
 }
 
+// Creating a button list to hold the pokemon
+function addListItem(pokemon){
+    let list = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('pokemon-item');
+    
+    listItem.appendChild(button);
+    list.appendChild(listItem);
+    /* Adds an event listner for the buttons to show pokemon details in
+    the logs when clicked*/
+    button.addEventListener('click', function() {
+        showDetails(pokemon);
+    })
+
+}
+
+function showDetails(pokemon){
+    console.log(pokemon)
+}
+
+
 return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails
 };
 })();
 
@@ -32,10 +57,11 @@ console.log(pokemonRepository.getAll());
 }*/
 
 // Replacing the for loop with a forEach loop
-pokemonRepository.getAll().forEach(function (pokemon){
-    if (pokemon.height > 6){
-        document.write(pokemon.name + ' (height: ' + pokemon.height + ') Wow, that is tall!' + '<br>');
-    } else {
-        document.write(pokemon.name + ' (height: ' + pokemon.height + ')' + '<br>');
-    }
+pokemonRepository.getAll().forEach(function (pokemon) {
+    // if (pokemon.height > 6){
+    //     document.write(pokemon.name + ' (height: ' + pokemon.height + ') Wow, that is tall!' + '<br>');
+    // } else {
+    //     document.write(pokemon.name + ' (height: ' + pokemon.height + ')' + '<br>');
+    // }
+    pokemonRepository.addListItem(pokemon)
 });
