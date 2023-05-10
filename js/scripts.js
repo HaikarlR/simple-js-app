@@ -24,13 +24,14 @@ let pokemonRepository = (function () {
         button.innerText = pokemon.name;
         button.classList.add('pokemon-item');
         button.classList.add('list-group-item');
+        button.classList.add('img');
 
         // Adding theing bootstrap btn class
         button.classList.add('btn');
         button.classList.add('btn-danger');
         button.classList.add('col');
         button.setAttribute('data-toggle', 'modal');
-        button.setAttribute('data-target', '#exampleModal');
+        button.setAttribute('data-target', '#pokeModal');
 
         //Appending to the button
         listItem.appendChild(button);
@@ -100,21 +101,21 @@ function showDetails(pokemon){
     let imageElementBack = $('<img class="modal-img" style ="width:50%">');
     imageElementBack.attr("src", pokemon.imageUrlBack);
     // Creating element for height in modal content
-    let heightElement = $("<p>" + "height: " + pokemon.height + "</p>");
+    let heightElement = $("<p>" + "Height: " + pokemon.height/10 + "m" + "</p>");
     // Creating element for height in modal content
-    let weightElement = $("<p>" + "weight: " + pokemon.weight + "</p>");
+    let weightElement = $("<p>" + "Weight: " + pokemon.weight/10 + "kg" + "</p>");
     // Creating element for height in modal content
-    let typesElement = $("<p>" + "types: " + pokemon.types + "</p>");
+    // let typesElement = $("<p>" + "types: " + pokemon.types + "</p>");
     // Creating element for abilities in modal content
-    let abilitiesElement = $("<p>" + "abilities: " + pokemon.abilities + "</p>");
+    // let abilitiesElement = $("<p>" + "abilities: " + pokemon.abilities + "</p>");
 
     modalTitle.append(nameElement);
     modalBody.append(imageElementFront);
     modalBody.append(imageElementBack);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
-    modalBody.append(typesElement);
-    modalBody.append(abilitiesElement);
+    //modalBody.append(typesElement);
+    //modalBody.append(abilitiesElement);
 
     };
 
